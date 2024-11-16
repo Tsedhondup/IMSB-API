@@ -1,6 +1,8 @@
 const knex = require("knex")(require("../knexfile"));
 
-const inventory = (_req, res) => {
+const inventory = (req, res) => {
+  console.log(req.params);
+
   knex("inventory")
     .then((data) => {
       res.status(200).json(data);
